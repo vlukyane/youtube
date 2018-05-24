@@ -1,6 +1,7 @@
 // adding elements to grid
 import {start, end} from './someVariables';
 import {addingValuesIntoHTMLTemplate} from "./addingValuesIntoHTMLTemplate";
+import {processingVideoClick} from "./processingVideoClick";
 
 export function addElementsToGrid(response){
     var videos = response;
@@ -31,4 +32,5 @@ export function addElementsToGrid(response){
         newNode.innerHTML = someStringPreparationsForInnerHTML;
         document.getElementById('grid').appendChild(newNode);
     }
+    processingVideoClick();
 }
