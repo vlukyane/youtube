@@ -1,0 +1,137 @@
+body {
+    background: #f3f5f5;
+}
+header {
+    margin-top: 30px;
+}
+header a {
+    color: black;
+    text-decoration: none;
+}
+header a:hover {
+    text-decoration: none;
+}
+form {
+    margin-top: 20px;
+}
+
+.Youtube-like{
+    display: flex;
+    justify-content: center;
+}
+.item {
+    margin-bottom: 25px;
+}
+.btn-primary {
+    background: #952b2b;
+    border-color: #958e8c;
+}
+
+.button-for-search{
+    width: 50vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background: #782b2b;
+    border-color: #952b2b;
+}
+
+.row{
+    width: 100%;
+}
+#buttonLoadMore{
+    margin-left: 50%;
+}
+.video{
+    height: 200px;
+    width: 350px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 320px));
+    grid-auto-rows: minmax(100px, auto);
+    grid-column-gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame {
+    position: fixed;
+    background-color: rgba(128, 128, 128, 0.64);
+    margin: 0 auto;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.videoFrame {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #4a4959;
+
+
+}
+
+.closeButton {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    float: right;
+    background-color: #582d2a;
+}
+
+.videoFromYoutube {
+    position: relative;
+    display: -moz-box;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    float: left;
+    height: 40vh;
+    width: 60vw;
+    margin-top: 20px;
+
+}
+
+.img-url {
+    height: 30%;
+    width: 100%;
+    margin-bottom: 7px;
+    margin-top: 3px;
+}
+
+.div-for-img-url {
+    border: 2px solid #ffd5c9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.div-for-img-url:hover {
+    border: 2px solid #ff9999;
+}
+
+
+@mixin font-base {
+    padding: 0;
+    margin: 0;
+    line-height: 0.7;
+    font-weight: 600;
+}
+
+h4 {
+@include font-base;
+}
+
+p {
+@include font-base;
+    color: grey;
+    font-size: 1.7rem;
+}
