@@ -1,4 +1,4 @@
-import {end, savedResponse, setEnd, setStart, start} from "./someVariables";
+import {end, itemsLength, savedResponse, setEnd, setStart, start} from "./someVariables";
 import {addElementsToGrid} from "./addElementsToGrid";
 
 export function processingButtonLoadMore() {
@@ -6,12 +6,12 @@ export function processingButtonLoadMore() {
 
         e.preventDefault();
 
-        if (start === 45) {
+        if (start === itemsLength) {
             alert('Sorry, cannot load more videos :(');
             return;
         }
         setStart(end);
-        setEnd(end + 15);
+        setEnd(Math.min(end + 15, itemsLength));
         addElementsToGrid(savedResponse.getResponse());
     })
 }

@@ -31,6 +31,6 @@ export function addElementsToGrid(response){
             }]);
         newNode.innerHTML = someStringPreparationsForInnerHTML;
         document.getElementById('grid').appendChild(newNode);
+        processingVideoClick(newNode.id);
     }
-    processingVideoClick();
 }

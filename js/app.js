@@ -3,7 +3,7 @@ import {clearDivsFromGrid} from './clearDivsFromGrid';
 import {processingVideoClick} from './processingVideoClick';
 import {addElementsToGrid} from './addElementsToGrid';
 import {createButtonLoadMore} from './createButtonLoadMore';
-import {end, savedResponse, setStart, setEnd} from './someVariables';
+import {end, savedResponse, setStart, setEnd, itemsLength, setItemsLength} from './someVariables';
 
 // creatin` main grid
 gettinStarted();
@@ -13,7 +13,6 @@ function gettinStarted() {
 
         //making the req
         clearDivsFromGrid();
-        //clearButtonLoadMore();
         var request = {
             mainText: 'https://www.googleapis.com/youtube/v3/search?key=',
             apiKey: "AIzaSyAezjPltv0vkq6xzFlxfu9zHrQc1h4OHQ0",
@@ -32,9 +31,12 @@ function gettinStarted() {
             'q=' + request.q + '&' +
             'order=' + request.order).then((resp) => resp.json()).then(function (response) {
             savedResponse.setResponse(response);
-            addElementsToGrid(savedResponse.getResponse());
+
+            setItemsLength(response.items.length);
             setStart(end);
-            setEnd(end + 15);
+            setEnd(Math.min(end + 15, itemsLength));
+
+            addElementsToGrid(savedResponse.getResponse());
             createButtonLoadMore();
             processingVideoClick();
         })
