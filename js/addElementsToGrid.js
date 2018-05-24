@@ -33,4 +33,5 @@ export function addElementsToGrid(response){
         document.getElementById('grid').appendChild(newNode);
         processingVideoClick(newNode.id);
     }
+    processingVideoClick();
 }
